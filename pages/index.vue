@@ -110,6 +110,7 @@ export default {
       await this.getMovies()
       return
     }
+    console.log('input', this.searchInput)
 
     await this.searchMovies()
   },
@@ -131,6 +132,8 @@ export default {
       })
     },
     async searchMovies() {
+      this.searchedMovies = []
+
       const { data } = await axios.get(
         'https://api.themoviedb.org/3/search/movie',
         {
