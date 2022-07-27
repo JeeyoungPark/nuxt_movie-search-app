@@ -16,6 +16,9 @@
       </button>
     </div>
 
+    <!-- Loading -->
+    <Loading v-if="$fetchState.pending" />
+
     <!-- Movies -->
     <div class="container movies">
       <!-- Searched Movies -->
@@ -96,8 +99,10 @@
 
 <script>
 import axios from 'axios'
+import Loading from '../components/Loading.vue'
 
 export default {
+  components: { Loading },
   data() {
     return {
       movies: [],
@@ -110,10 +115,10 @@ export default {
       await this.getMovies()
       return
     }
-    console.log('input', this.searchInput)
 
     await this.searchMovies()
   },
+  fetchDelay: 2000,
   methods: {
     async getMovies() {
       const { data } = await axios.get(
@@ -157,7 +162,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.loading {
+  padding-top: 120px;
+  align-items: flex-start;
+}
+
 .search {
   display: flex;
   padding: 32px 16px;
