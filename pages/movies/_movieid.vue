@@ -50,11 +50,16 @@ export default {
   name: 'SingleMovie',
   data() {
     return {
-      movie: null,
+      movie: '',
     }
   },
   async fetch() {
     await this.getSingleMovie()
+  },
+  head() {
+    return {
+      title: this.movie.title,
+    }
   },
   fetchDelay: 2000,
   methods: {

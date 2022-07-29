@@ -99,10 +99,8 @@
 
 <script>
 import axios from 'axios'
-import Loading from '../components/Loading.vue'
 
 export default {
-  components: { Loading },
   data() {
     return {
       movies: [],
@@ -117,6 +115,23 @@ export default {
     }
 
     await this.searchMovies()
+  },
+  head() {
+    return {
+      title: 'Movie App - Latest Streaming Movie Info',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Get all the latest streaming movies in theaters & online',
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'movies, stream, streaming',
+        },
+      ],
+    }
   },
   fetchDelay: 2000,
   methods: {
