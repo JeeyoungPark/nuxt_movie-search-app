@@ -188,6 +188,7 @@ export default {
   padding: 32px 16px;
   gap: 16px;
   input {
+    background-color: #fff;
     max-width: 350px;
     width: 100%;
     padding: 12px 6px;
