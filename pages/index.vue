@@ -42,8 +42,9 @@
               <span v-if="movie.title.length > 25">...</span>
             </p>
             <p class="release">
-              Released:{{
-                new Date(movie.release_data).toLocaleString('en-us', {
+              Released:
+              {{
+                new Date(movie.release_date).toLocaleString('en-us', {
                   month: 'long',
                   day: 'numeric',
                   year: 'numeric',
@@ -76,8 +77,9 @@
               <span v-if="movie.title.length > 25">...</span>
             </p>
             <p class="release">
-              Released:{{
-                new Date(movie.release_data).toLocaleString('en-us', {
+              Released:
+              {{
+                new Date(movie.release_date).toLocaleString('en-us', {
                   month: 'long',
                   day: 'numeric',
                   year: 'numeric',
